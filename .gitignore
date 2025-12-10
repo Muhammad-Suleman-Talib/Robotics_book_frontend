@@ -1,0 +1,34 @@
+# Docusaurus
+.docusaurus/
+
+# Git
+.git/
+
+# Node.js
+node_modules/
+dist/
+build/
+*.log
+.env
+.env.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Editor/IDE files
+.idea/
+*.iml
+
+# Temp files
+*.tmp
+*.swp
+coverage/

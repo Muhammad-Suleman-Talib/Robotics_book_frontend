@@ -31,7 +31,12 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- [ ] **Spec-Driven Development**: Does this plan adhere to an approved specification?
+- [ ] **Test-Driven Development (TDD)**: Are tasks defined for writing tests before implementation?
+- [ ] **Version Control with Git**: Is the work being done in a feature branch with clear commit history planned?
+- [ ] **Code Quality and Style**: Are linters and formatters part of the development setup?
+- [ ] **CI/CD**: Is the project set up for automated testing and deployment?
+- [ ] **Documentation**: Are tasks included for creating or updating documentation?
 
 ## Project Structure
 

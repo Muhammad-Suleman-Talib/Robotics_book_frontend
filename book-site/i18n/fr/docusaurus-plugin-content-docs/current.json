@@ -1,0 +1,30 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.bookSidebar.category.Part 1: Foundations of Physical AI & Humanoid Robotics": {
+    "message": "Part 1: Foundations of Physical AI & Humanoid Robotics",
+    "description": "The label for category 'Part 1: Foundations of Physical AI & Humanoid Robotics' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.category.Part 2: Kinematics of Humanoid Robots": {
+    "message": "Part 2: Kinematics of Humanoid Robots",
+    "description": "The label for category 'Part 2: Kinematics of Humanoid Robots' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.category.Part 3: Dynamics of Humanoid Robots": {
+    "message": "Part 3: Dynamics of Humanoid Robots",
+    "description": "The label for category 'Part 3: Dynamics of Humanoid Robots' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.category.Part 4: Motion Planning and Control": {
+    "message": "Part 4: Motion Planning and Control",
+    "description": "The label for category 'Part 4: Motion Planning and Control' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.category.Part 5: Perception and AI for Humanoids": {
+    "message": "Part 5: Perception and AI for Humanoids",
+    "description": "The label for category 'Part 5: Perception and AI for Humanoids' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.category.Part 6: Advanced Topics and Future Directions": {
+    "message": "Part 6: Advanced Topics and Future Directions",
+    "description": "The label for category 'Part 6: Advanced Topics and Future Directions' in sidebar 'bookSidebar'"
+  }
+}

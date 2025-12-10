@@ -1,0 +1,248 @@
+/* custom.css - Updated with Theme Variables */
+
+/* ==============================================
+   ✅ GLOBAL THEME VARIABLES
+============================================== */
+
+:root {
+  /* Your Neon Colors */
+  --primary-color: #00E6FF;
+  --primary-dark: #00C6DD;
+  --primary-darker: #009FB2;
+  --primary-darkest: #007D8C;
+  
+  /* Light Mode Colors (Default for Docusaurus) */
+  --ifm-background-color: #FFFFFF;
+  --ifm-text-color: #000000;
+  --ifm-color-emphasis-100: #F4F4F4;
+  --docusaurus-highlighted-code-line-bg: rgba(0,0,0,0.1);
+  
+  /* Dark Mode Colors */
+  --dark-background: #0A0C1C;
+  --dark-secondary-bg: #12152B;
+  --dark-text: #FFFFFF;
+  --dark-emphasis-100: #1A1F3C;
+}
+
+/* Apply base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==============================================
+   ✅ DOCUSAURUS THEME OVERRIDES
+============================================== */
+
+/* Light Mode (default) */
+:root {
+  --ifm-color-primary: var(--primary-color);
+  --ifm-color-primary-dark: var(--primary-dark);
+  --ifm-color-primary-darker: var(--primary-darker);
+  --ifm-color-primary-darkest: var(--primary-darkest);
+  --ifm-color-primary-light: #33EEFF;
+  --ifm-color-primary-lighter: #66F5FF;
+  --ifm-color-primary-lightest: #99FAFF;
+  
+  --ifm-background-color: var(--ifm-background-color);
+  --ifm-text-color: var(--ifm-text-color);
+  --ifm-color-emphasis-100: var(--ifm-color-emphasis-100);
+  --docusaurus-highlighted-code-line-bg: var(--docusaurus-highlighted-code-line-bg);
+}
+
+/* Dark Mode */
+[data-theme='dark'] {
+  --ifm-color-primary: var(--primary-color);
+  --ifm-color-primary-dark: var(--primary-dark);
+  --ifm-color-primary-darker: var(--primary-darker);
+  --ifm-color-primary-darkest: var(--primary-darkest);
+  --ifm-color-primary-light: #33EEFF;
+  --ifm-color-primary-lighter: #66F5FF;
+  --ifm-color-primary-lightest: #99FAFF;
+  
+  --ifm-background-color: var(--dark-background);
+  --ifm-text-color: var(--dark-text);
+  --ifm-color-emphasis-100: var(--dark-emphasis-100);
+  --docusaurus-highlighted-code-line-bg: rgba(255,255,255,0.08);
+}
+
+/* ==============================================
+   ✅ SYNCHRONIZE WITH MAIN THEME
+============================================== */
+
+/* Apply same colors to Docusaurus components */
+html, body {
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-text-color);
+}
+
+a {
+  color: var(--ifm-color-primary);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--ifm-color-primary-dark);
+  text-decoration: none;
+}
+
+.navbar {
+  background: var(--ifm-background-color);
+  border-bottom: 1px solid var(--ifm-color-emphasis-100);
+}
+
+.footer {
+  background: var(--dark-secondary-bg);
+}
+
+/* Cards and containers */
+.container {
+  background: var(--ifm-background-color);
+  color: var(--ifm-text-color);
+}
+
+/* Text colors */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ifm-text-color);
+}
+
+p, li, span {
+  color: var(--ifm-text-color);
+}
+
+/* ==============================================
+   ✅ FEATURES COMPONENT
+============================================== */
+
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+  background: var(--ifm-background-color);
+}
+
+.featureSvg {
+  height: 200px;
+  width: 200px;
+  filter: brightness(0) invert(0);
+}
+
+[data-theme='dark'] .featureSvg {
+  filter: brightness(0) invert(1);
+}
+
+/* Feature cards */
+.featureCard {
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 230, 255, 0.2);
+}
+
+/* ==============================================
+   ✅ CUSTOM COMPONENTS
+============================================== */
+
+/* Neon glow effect */
+.neon-glow {
+  text-shadow: 0 0 10px var(--primary-color),
+               0 0 20px var(--primary-color),
+               0 0 30px var(--primary-color);
+}
+
+/* Gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, 
+    var(--primary-color) 0%, 
+    #8B5CFF 50%, 
+    #377BFF 100%);
+}
+
+/* Cards with glass effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-theme='dark'] .glass-card {
+  background: rgba(10, 12, 28, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ==============================================
+   ✅ BUTTON STYLES
+============================================== */
+
+.neon-button {
+  background: var(--primary-color);
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.neon-button:hover {
+  box-shadow: 0 0 20px var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.neon-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: 0.5s;
+}
+
+.neon-button:hover:before {
+  left: 100%;
+}
+
+/* ==============================================
+   ✅ ANIMATIONS
+============================================== */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px var(--primary-color); }
+  50% { box-shadow: 0 0 20px var(--primary-color); }
+}
+
+/* ==============================================
+   ✅ RESPONSIVE UTILITIES
+============================================== */
+
+@media (max-width: 768px) {
+  .features {
+    padding: 1rem 0;
+  }
+  
+  .featureSvg {
+    height: 150px;
+    width: 150px;
+  }
+}

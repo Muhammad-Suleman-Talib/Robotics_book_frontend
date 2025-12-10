@@ -1,55 +1,66 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+---
+sync_impact_report:
+  version_change: "0.0.0 -> 1.0.0"
+  modified_principles: []
+  added_sections:
+    - "Core Principles"
+    - "Development Workflow"
+    - "Quality Assurance"
+    - "Governance"
+  removed_sections: []
+  templates_updated:
+    - path: ".specify/templates/plan-template.md"
+      status: "✅ updated"
+    - path: ".specify/templates/spec-template.md"
+      status: "✅ updated"
+    - path: ".specify/templates/tasks-template.md"
+      status: "✅ updated"
+  todos: []
+---
+-->
+# Humanoid Robotics Book Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Spec-Driven Development
+All new features, changes, or bug fixes must begin with a clear and approved specification. The specification serves as the source of truth for the implementation.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Test-Driven Development (TDD)
+Development must follow a strict Red-Green-Refactor cycle. A failing test must be written before any implementation code is added. All code must be accompanied by unit and integration tests.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Version Control with Git
+All code changes must be tracked in Git. Commits should be atomic and accompanied by clear, descriptive messages that explain the "what" and "why" of the change. Branches should be used for all new features and bug fixes.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Code Quality and Style
+The codebase must adhere to a consistent style, enforced by automated linting and formatting tools. Code should be clear, concise, and easy to understand.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Continuous Integration/Continuous Deployment (CI/CD)
+All changes must pass through an automated CI/CD pipeline that runs tests, checks for code quality, and deploys to staging and production environments.
 
-### [PRINCIPLE_6_NAME]
+### VI. Documentation
+All new features, APIs, and architectural decisions must be documented. The documentation should be kept up-to-date with the code.
 
+## Development Workflow
 
-[PRINCIPLE__DESCRIPTION]
+All development work should follow these steps:
+1.  Create a feature or bugfix branch from the main branch.
+2.  Write a specification and have it reviewed and approved.
+3.  Write failing tests that cover the new functionality.
+4.  Implement the feature or fix the bug.
+5.  Ensure all tests pass.
+6.  Update documentation.
+7.  Open a pull request for review.
+8.  Once approved, merge the pull request into the main branch.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Quality Assurance
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+- All pull requests must be reviewed by at least one other team member.
+- All tests must pass in the CI/CD pipeline before a pull request can be merged.
+- Manual testing should be performed for user-facing changes.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution is the supreme governing document for this project. Any proposed changes to this constitution must be submitted as a pull request, reviewed by the team, and approved by a majority vote.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-07 | **Last Amended**: 2025-12-07
