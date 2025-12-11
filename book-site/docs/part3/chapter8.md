@@ -1,4 +1,4 @@
-﻿---
+---
 id: part3_chapter8
 sidebar_position: 8
 title: "Lab: Dynamic Simulation and Analysis"
@@ -193,4 +193,4 @@ Further discussion on advanced aspects.
 
 ## Further Reading
 
-- [Relevant Article/Book Title](link_to_resource)
+- [Relevant Article/Book Title](/docs/intro)

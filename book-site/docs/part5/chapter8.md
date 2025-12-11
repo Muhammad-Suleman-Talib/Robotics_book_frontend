@@ -1,4 +1,4 @@
-﻿---
+---
 id: part5_chapter8
 sidebar_position: 8
 title: "Lab: Integrating Perception Modules"
@@ -73,7 +73,7 @@ An image can often clarify the complex interplay of various perception modules a
 
 ## Code Example: Simple Sensor Data Fusion
 
-Integrating perception modules often involves fusing data from multiple sensors to gain a more robust and complete understanding of the environment. Here’s a simplified pseudocode example demonstrating a basic approach to fusing data from a proximity sensor and a vision system to detect an object.
+Integrating perception modules often involves fusing data from multiple sensors to gain a more robust and complete understanding of the environment. Here�s a simplified pseudocode example demonstrating a basic approach to fusing data from a proximity sensor and a vision system to detect an object.
 
 ```python
 class ProximitySensor:
@@ -156,4 +156,4 @@ Further discussion on advanced aspects.
 
 ## Further Reading
 
-- [Relevant Article/Book Title](link_to_resource)
+- [Relevant Article/Book Title](/docs/intro)

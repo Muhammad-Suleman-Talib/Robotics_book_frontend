@@ -1,4 +1,4 @@
-﻿---
+---
 id: part3_chapter7
 sidebar_position: 7
 title: External Forces and Contact Dynamics
@@ -24,4 +24,4 @@ Further discussion on advanced aspects.
 
 ## Further Reading
 
-- [Relevant Article/Book Title](link_to_resource)
+- [Relevant Article/Book Title](/docs/intro)

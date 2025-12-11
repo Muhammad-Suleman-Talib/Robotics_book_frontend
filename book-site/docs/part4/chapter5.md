@@ -1,4 +1,4 @@
-﻿---
+---
 id: part4_chapter5
 sidebar_position: 5
 title: Whole-Body Control Architectures
@@ -24,4 +24,4 @@ Further discussion on advanced aspects.
 
 ## Further Reading
 
-- [Relevant Article/Book Title](link_to_resource)
+- [Relevant Article/Book Title](/docs/intro)

@@ -32,15 +32,6 @@ const config: Config = {
 
   clientModules: [require.resolve('./src/theme/Root.tsx')],
 
-  plugins: [ // plugins array
-    [
-      require.resolve('docusaurus-plugin-search-local'),
-      {
-        hashed: true,
-      },
-    ],
-  ],
-
   presets: [
     [
       'classic',
@@ -111,6 +102,7 @@ const config: Config = {
           position: 'right',
           component: '@site/src/theme/NavbarItem/ThemeToggle',
         },
+
       ],
     },
     footer: {

@@ -1,4 +1,4 @@
-﻿---
+---
 id: part5_chapter4
 sidebar_position: 4
 title: "AI in Robotics: Machine Learning Applications"
@@ -75,7 +75,7 @@ A visual representation of how machine learning models integrate into a robot's 
 
 ## Code Example: Simple Object Classifier for Robotics
 
-In robotics, machine learning is frequently used for perception tasks, such as classifying objects from sensor data. Here’s a very basic pseudocode example of a simple object classifier that might be used to identify an object a robot observes. This example simplifies many complexities but illustrates the core idea.
+In robotics, machine learning is frequently used for perception tasks, such as classifying objects from sensor data. Here�s a very basic pseudocode example of a simple object classifier that might be used to identify an object a robot observes. This example simplifies many complexities but illustrates the core idea.
 
 ```python
 import numpy as np
@@ -174,4 +174,4 @@ Further discussion on advanced aspects.
 
 ## Further Reading
 
-- [Relevant Article/Book Title](link_to_resource)
+- [Relevant Article/Book Title](/docs/intro)

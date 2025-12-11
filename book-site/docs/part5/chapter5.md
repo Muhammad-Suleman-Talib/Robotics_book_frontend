@@ -1,4 +1,4 @@
-﻿---
+---
 id: part5_chapter5
 sidebar_position: 5
 title: Reinforcement Learning for Robot Control
@@ -24,4 +24,4 @@ Further discussion on advanced aspects.
 
 ## Further Reading
 
-- [Relevant Article/Book Title](link_to_resource)
+- [Relevant Article/Book Title](/docs/intro)

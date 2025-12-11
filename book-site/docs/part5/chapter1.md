@@ -1,4 +1,4 @@
-﻿---
+---
 id: part5_chapter1
 sidebar_position: 1
 title: Sensor Fusion for Environment Perception
@@ -24,4 +24,4 @@ Further discussion on advanced aspects.
 
 ## Further Reading
 
-- [Relevant Article/Book Title](link_to_resource)
+- [Relevant Article/Book Title](/docs/intro)

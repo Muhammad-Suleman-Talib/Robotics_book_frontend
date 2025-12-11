@@ -1,4 +1,4 @@
-﻿---
+---
 id: part5_chapter2
 sidebar_position: 2
 title: "Vision Systems: Object Recognition and Tracking"
@@ -77,7 +77,7 @@ An image depicting the output of an object recognition system, perhaps with boun
 
 ## Code Example: Basic Object Detection with Mock API
 
-Here’s a simplified pseudocode example demonstrating a basic object detection process, abstracting away the complexities of actual image processing and deep learning models using a mock API. This illustrates the flow from capturing an image to receiving detection results.
+Here�s a simplified pseudocode example demonstrating a basic object detection process, abstracting away the complexities of actual image processing and deep learning models using a mock API. This illustrates the flow from capturing an image to receiving detection results.
 
 ```python
 import time
@@ -184,4 +184,4 @@ Further discussion on advanced aspects.
 
 ## Further Reading
 
-- [Relevant Article/Book Title](link_to_resource)
+- [Relevant Article/Book Title](/docs/intro)

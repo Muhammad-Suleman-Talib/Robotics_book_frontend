@@ -1,4 +1,4 @@
-﻿---
+---
 id: part3_chapter3
 sidebar_position: 3
 title: Equations of Motion for Multi-Link Robots
@@ -24,4 +24,4 @@ Further discussion on advanced aspects.
 
 ## Further Reading
 
-- [Relevant Article/Book Title](link_to_resource)
+- [Relevant Article/Book Title](/docs/intro)

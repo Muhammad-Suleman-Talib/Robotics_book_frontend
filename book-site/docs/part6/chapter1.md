@@ -1,4 +1,4 @@
-﻿---
+---
 id: part6_chapter1
 sidebar_position: 1
 title: Human-Robot Collaboration
@@ -24,4 +24,4 @@ Further discussion on advanced aspects.
 
 ## Further Reading
 
-- [Relevant Article/Book Title](link_to_resource)
+- [Relevant Article/Book Title](/docs/intro)

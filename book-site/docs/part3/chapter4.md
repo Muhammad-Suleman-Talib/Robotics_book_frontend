@@ -1,4 +1,4 @@
-﻿---
+---
 id: part3_chapter4
 sidebar_position: 4
 title: "Inverse Dynamics: Computing Joint Torques"
@@ -178,4 +178,4 @@ Further discussion on advanced aspects.
 
 ## Further Reading
 
-- [Relevant Article/Book Title](link_to_resource)
+- [Relevant Article/Book Title](/docs/intro)

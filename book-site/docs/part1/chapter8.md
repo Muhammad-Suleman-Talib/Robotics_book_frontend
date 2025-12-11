@@ -1,4 +1,4 @@
-﻿---
+---
 id: part1_chapter8
 sidebar_position: 8
 title: Actuators and Sensors for Humanoid Robots
@@ -197,4 +197,4 @@ Further discussion on advanced aspects.
 
 ## Further Reading
 
-- [Relevant Article/Book Title](link_to_resource)
+- [Relevant Article/Book Title](/docs/intro)

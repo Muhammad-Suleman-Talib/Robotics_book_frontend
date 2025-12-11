@@ -1,4 +1,4 @@
-﻿---
+---
 id: part6_chapter8
 sidebar_position: 8
 title: "Project: Building a Simple Humanoid Application"
@@ -143,4 +143,4 @@ Further discussion on advanced aspects.
 
 ## Further Reading
 
-- [Relevant Article/Book Title](link_to_resource)
+- [Relevant Article/Book Title](/docs/intro)

@@ -1,4 +1,4 @@
-﻿---
+---
 id: part5_chapter6
 sidebar_position: 6
 title: Natural Language Processing for Human-Robot Interaction
@@ -24,4 +24,4 @@ Further discussion on advanced aspects.
 
 ## Further Reading
 
-- [Relevant Article/Book Title](link_to_resource)
+- [Relevant Article/Book Title](/docs/intro)

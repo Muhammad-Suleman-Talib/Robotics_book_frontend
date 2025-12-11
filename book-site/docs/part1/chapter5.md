@@ -78,7 +78,7 @@ _Replace `YOUR_VIDEO_ID` with the actual YouTube video ID._
 
 A high-level diagram illustrating the typical ROS architecture within a humanoid robot system, showing various nodes, topics, and their interactions.
 
-![ROS Architecture](/img/ros_architecture.png)
+
 
 ## Code Example: Simple ROS Publisher and Subscriber (Pseudocode)
 

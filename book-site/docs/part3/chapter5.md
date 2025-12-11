@@ -1,4 +1,4 @@
-﻿---
+---
 id: part3_chapter5
 sidebar_position: 5
 title: "Forward Dynamics: Simulating Motion"
@@ -172,4 +172,4 @@ Further discussion on advanced aspects.
 
 ## Further Reading
 
-- [Relevant Article/Book Title](link_to_resource)
+- [Relevant Article/Book Title](/docs/intro)

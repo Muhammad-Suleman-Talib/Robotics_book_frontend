@@ -1,4 +1,4 @@
-﻿---
+---
 id: part4_chapter3
 sidebar_position: 3
 title: PID Control for Robot Joints
@@ -24,4 +24,4 @@ Further discussion on advanced aspects.
 
 ## Further Reading
 
-- [Relevant Article/Book Title](link_to_resource)
+- [Relevant Article/Book Title](/docs/intro)

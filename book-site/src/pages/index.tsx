@@ -132,7 +132,7 @@ export default function Home(): ReactNode {
                 </Link>
                 <Link
                   className={clsx('button button--lg', styles.heroCTA, styles.secondaryCTA)}
-                  to="/docs/books"
+                  to="/docs/intro"
                 >
                   🌐 Explore More Books
                 </Link>
@@ -430,7 +430,7 @@ export default function Home(): ReactNode {
                 <h4>Navigation</h4>
                 <ul>
                   <li><Link to="/">Home</Link></li>
-                  <li><Link to="/docs/books">Books</Link></li>
+                  <li><Link to="/docs/intro">Books</Link></li>
                 </ul>
               </div>
             </div>
