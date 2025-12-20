@@ -13,8 +13,10 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://muhammad-suleman-talib.github.io',
-  baseUrl: '/',
+  organizationName: 'Muhammad-Suleman-Talib', // Usually your GitHub org/user name.
+  projectName: 'Robotics_book_frontend', // Usually your repo name.
+  url: 'https://Muhammad-Suleman-Talib.github.io',
+  baseUrl: '/Robotics_book_frontend/',
 
   onBrokenLinks: 'throw',
 
