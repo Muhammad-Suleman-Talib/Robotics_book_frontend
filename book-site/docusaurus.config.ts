@@ -5,32 +5,24 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Physical AI & Humanoid Robotics book',
+  title: '📚 Humanoid Robotics Books',
   tagline: 'A comprehensive guide to Physical AI and Humanoid Robotics.',
   favicon: 'img/favicon.ico',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
   },
 
-  // Set the production url of your site here
-  url: 'https://muhammad-suleman-talib.github.io', // Keep for now, but Vercel will provide its own URL
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For Vercel deployment, it is typically '/'
+  url: 'https://muhammad-suleman-talib.github.io',
   baseUrl: '/',
-
-  // GitHub pages deployment config. These are not needed for Vercel.
-  // organizationName: 'muhammad-suleman-talib',
-  // projectName: 'humanoid_robotics_book',
 
   onBrokenLinks: 'throw',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
-
   clientModules: [require.resolve('./src/theme/Root.tsx')],
+
+  plugins: ['docusaurus-plugin-search-local'],
+
+  scripts: ['/js/theme.js'],
 
   presets: [
     [
@@ -38,10 +30,6 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl:
-          //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
@@ -49,11 +37,6 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl:
-          //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -66,25 +49,24 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
       defaultMode: 'dark',
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
     },
     navbar: {
       title: 'ROBOTICS_AI',
       logo: {
         alt: 'ROBOTICS_AI Logo',
-        src: 'img/AUTHOR.png',
+        src: 'img/book_icon.png',
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'bookSidebar', // Will be defined in sidebars.ts
-          position: 'left',
-          label: 'Book',
-        },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'bookSidebar', // Will be defined in sidebars.ts
+        //   position: 'left',
+        //   label: 'Book',
+        // },
         // {to: '/blog', label: 'Blog', position: 'left'}, // Keep blog for now, can remove later if not needed
 
         {
@@ -92,16 +74,22 @@ const config: Config = {
           label: 'GitHub',
           position: 'right',
         },
+         {
+          type: 'custom-auth-navbar-item',
+          position: 'right',
+        },
 
         {
-          type: 'search', // Add this line for search
-          position: 'right', // You can change the position as needed (left, right)
-        },
-        {
-          type: 'custom',
+          type: 'search',
           position: 'right',
-          component: '@site/src/theme/NavbarItem/ThemeToggle',
-        },
+        }
+        // Custom Auth Navbar Item
+        // {
+        //   type: 'custom-auth-navbar-item',
+        //   position: 'right',
+        // },
+        // Custom Auth Navbar Item
+       
 
       ],
     },
@@ -148,18 +136,13 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Built by Muhammad Suleman Full_Stack AI Developer.`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-    algolia: { // Algolia configuration at the top level of themeConfig
-      appId: 'YOUR_APP_ID',
-      apiKey: 'YOUR_SEARCH_API_KEY',
-      indexName: 'YOUR_INDEX_NAME',
-      contextualSearch: true,
-    },
+
   } satisfies Preset.ThemeConfig,
 };
 

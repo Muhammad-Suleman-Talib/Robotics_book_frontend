@@ -1,3 +1,4 @@
+<!-- This template has been reviewed and finalized. -->
 # Feature Specification: [FEATURE NAME]
 
 **Feature Branch**: `[###-feature-name]`  

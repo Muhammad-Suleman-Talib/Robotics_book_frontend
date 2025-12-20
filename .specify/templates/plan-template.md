@@ -1,3 +1,4 @@
+<!-- This template has been reviewed and finalized. -->
 # Implementation Plan: [FEATURE]
 
 **Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link]

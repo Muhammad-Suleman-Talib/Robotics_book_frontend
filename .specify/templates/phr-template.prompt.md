@@ -1,3 +1,4 @@
+<!-- This template has been reviewed and finalized. -->
 ---
 id: {{ID}}
 title: {{TITLE}}

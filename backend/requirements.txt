@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+authlib
+sqlmodel
+psycopg2-binary
+pytest
+flake8
+black
+pydantic-settings
+python-json-logger
+python-dotenv
+email-validator

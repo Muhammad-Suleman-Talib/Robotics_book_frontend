@@ -85,6 +85,7 @@ export default function Home(): ReactNode {
       title={`Explore ${siteConfig.title}`}
       description="Master Physical AI & Humanoid Robotics with cutting-edge insights and practical guidance.">
       
+      
       {/* SECTION 1 — HERO SECTION */}
       <header className={clsx('hero', styles.heroSection)}>
         <div className="container">

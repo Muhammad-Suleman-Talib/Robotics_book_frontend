@@ -1,0 +1,98 @@
+openapi: 3.0.0
+info:
+  title: Authentication Service API
+  version: 1.0.0
+  description: API for user authentication, session management, and OAuth2/OIDC flows.
+
+servers:
+  - url: /api/auth
+    description: Authentication API endpoint
+
+paths:
+  /{provider}:
+    get:
+      summary: Initiate Login
+      description: Redirects the user to the specified identity provider for authentication.
+      parameters:
+        - name: provider
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The name of the identity provider (e.g., 'google').
+      responses:
+        '302':
+          description: Redirect to the identity provider's authorization URL.
+        '400':
+          description: Invalid provider specified.
+
+  /{provider}/callback:
+    get:
+      summary: Authentication Callback
+      description: Handles the callback from the identity provider after the user authorizes the application.
+      parameters:
+        - name: provider
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The name of the identity provider.
+      responses:
+        '302':
+          description: Redirect to the frontend application with a session established. A session cookie is set.
+        '401':
+          description: Authentication failed.
+
+  /logout:
+    post:
+      summary: User Logout
+      description: Terminates the current user's session.
+      responses:
+        '200':
+          description: Successfully logged out.
+        '401':
+          description: No active session to log out from.
+
+  /session:
+    get:
+      summary: Get Session Information
+      description: Retrieves information about the currently authenticated user.
+      responses:
+        '200':
+          description: Active session found. Returns user information.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  isAuthenticated:
+                    type: boolean
+                    example: true
+                  user:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      name:
+                        type: string
+                      email:
+                        type: string
+        '401':
+          description: No active session.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  isAuthenticated:
+                    type: boolean
+                    example: false
+  /refresh:
+    post:
+      summary: Refresh Access Token
+      description: Uses the refresh token (if available) to get a new access token. This is typically called automatically by the client.
+      responses:
+        '200':
+          description: Token refreshed successfully.
+        '401':
+          description: Refresh failed, user must log in again.

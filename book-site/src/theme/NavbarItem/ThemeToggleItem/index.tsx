@@ -3,16 +3,26 @@ import { useEffect, useState } from 'react';
 import './index.module.css';
 
 export default function ThemeToggle() {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(true); // Default to true for dark mode
 
   useEffect(() => {
-    // Check initial theme
-    const isDarkMode = document.body.classList.contains('dark-mode') || 
-                      (!document.body.classList.contains('light-mode') && 
-                       window.matchMedia('(prefers-color-scheme: dark)').matches);
-    setIsDark(isDarkMode);
-    document.body.classList.toggle('light-mode', !isDarkMode);
-    document.body.classList.toggle('dark-mode', isDarkMode);
+    // Check localStorage first for saved preference
+    const savedTheme = localStorage.getItem('theme');
+    
+    if (savedTheme) {
+      // Use saved preference
+      const shouldBeDark = savedTheme === 'dark';
+      setIsDark(shouldBeDark);
+      document.body.classList.toggle('light-mode', !shouldBeDark);
+      document.body.classList.toggle('dark-mode', shouldBeDark);
+    } else {
+      // No saved preference - DEFAULT TO DARK MODE
+      const defaultDark = true; // Force dark mode by default
+      setIsDark(defaultDark);
+      document.body.classList.toggle('light-mode', !defaultDark);
+      document.body.classList.toggle('dark-mode', defaultDark);
+      localStorage.setItem('theme', 'dark'); // Save dark as default
+    }
   }, []);
 
   const toggleTheme = () => {

@@ -22,6 +22,15 @@
   --dark-secondary-bg: #12152B;
   --dark-text: #FFFFFF;
   --dark-emphasis-100: #1A1F3C;
+
+  /* Docusaurus primary colors */
+  --ifm-color-primary: var(--primary-color);
+  --ifm-color-primary-dark: var(--primary-dark);
+  --ifm-color-primary-darker: var(--primary-darker);
+  --ifm-color-primary-darkest: var(--primary-darkest);
+  --ifm-color-primary-light: #33EEFF;
+  --ifm-color-primary-lighter: #66F5FF;
+  --ifm-color-primary-lightest: #99FAFF;
 }
 
 /* Apply base styles */
@@ -32,22 +41,6 @@
 /* ==============================================
    ✅ DOCUSAURUS THEME OVERRIDES
 ============================================== */
-
-/* Light Mode (default) */
-:root {
-  --ifm-color-primary: var(--primary-color);
-  --ifm-color-primary-dark: var(--primary-dark);
-  --ifm-color-primary-darker: var(--primary-darker);
-  --ifm-color-primary-darkest: var(--primary-darkest);
-  --ifm-color-primary-light: #33EEFF;
-  --ifm-color-primary-lighter: #66F5FF;
-  --ifm-color-primary-lightest: #99FAFF;
-  
-  --ifm-background-color: var(--ifm-background-color);
-  --ifm-text-color: var(--ifm-text-color);
-  --ifm-color-emphasis-100: var(--ifm-color-emphasis-100);
-  --docusaurus-highlighted-code-line-bg: var(--docusaurus-highlighted-code-line-bg);
-}
 
 /* Dark Mode */
 [data-theme='dark'] {
@@ -245,4 +238,185 @@ p, li, span {
     height: 150px;
     width: 150px;
   }
+}
+
+/* ==============================================
+   ✅ MODAL STYLES (for AuthComponent)
+============================================== */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure modal is on top */
+}
+
+.modal-content {
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-text-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  max-width: 500px; /* Max width for the modal */
+  width: 90%; /* Responsive width */
+  max-height: 90vh; /* Max height to fit on screen */
+  overflow-y: auto; /* Enable scrolling for long content */
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--ifm-text-color);
+}
+
+/* AuthComponent specific styles within modal for better look */
+.authWrapper {
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.authTabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-100);
+}
+
+.authTabs button {
+  flex-grow: 1;
+  padding: 10px 15px;
+  border: none;
+  background: none;
+  color: var(--ifm-text-color);
+  cursor: pointer;
+  font-size: 1rem;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.authTabs button:hover {
+  color: var(--ifm-color-primary);
+}
+
+.authTabs button.activeTab {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  font-weight: bold;
+}
+
+.authSeparator {
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+  color: var(--ifm-text-color);
+}
+
+.authSeparator::before,
+.authSeparator::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: var(--ifm-color-emphasis-100);
+}
+
+.authSeparator::before {
+  left: 0;
+}
+
+.authSeparator::after {
+  right: 0;
+}
+
+.socialBtn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--ifm-color-emphasis-100);
+  border-radius: 5px;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-text-color);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.socialBtn:hover {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.authToggleForm {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9em;
+}
+
+.authToggleForm a {
+  color: var(--ifm-color-primary);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.authToggleForm a:hover {
+  color: var(--ifm-color-primary-dark);
+}
+
+/* Form inputs */
+.register-form input,
+.login-form input {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  margin-top: 5px;
+  border: 1px solid var(--ifm-color-emphasis-100);
+  border-radius: 4px;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-text-color);
+}
+
+.register-form button,
+.login-form button {
+  margin-top: 15px;
+}
+
+.alert {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+}
+
+.alert--success {
+  background-color: #d4edda;
+  color: #155724;
+  border-color: #c3e6cb;
+}
+
+.alert--error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-color: #f5c6cb;
+}
+
+/* Ensure navbar links are visible */
+.navbar__link {
+  color: var(--ifm-navbar-link-color); /* Docusaurus default */
+}
+
+.navbar__link:hover {
+  color: var(--ifm-color-primary); /* Use primary color on hover */
 }

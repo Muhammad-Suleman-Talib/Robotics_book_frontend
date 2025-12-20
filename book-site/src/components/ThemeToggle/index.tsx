@@ -11,14 +11,14 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ className }) => {
   const isDarkTheme = colorMode === 'dark';
 
   const toggleTheme = () => {
-    setColorMode(isDarkTheme ? 'light' : 'dark');
+    setColorMode(isDarkTheme ? 'dark' : 'light');
   };
 
   return (
     <button
       onClick={toggleTheme}
       className={`clean-btn ${className}`}
-      aria-label={isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme'}
+      aria-label={isDarkTheme ? 'Switch to dark theme' : 'Switch to light theme'}
     >
       {isDarkTheme ? (
         <svg

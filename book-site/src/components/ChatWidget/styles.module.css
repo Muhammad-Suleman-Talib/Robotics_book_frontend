@@ -1,100 +1,4 @@
-/* .container {}
-
-.floatingBtn {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #4a90e2;
-  color: white;
-  font-size: 26px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.chatBox {
-  position: fixed;
-  bottom: 90px;
-  right: 25px;
-  width: 320px;
-  height: 450px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-  display: flex;
-  flex-direction: column;
-}
-
-.header {
-  background: #4a90e2;
-  color: white;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-  border-radius: 12px 12px 0 0;
-}
-
-.closeBtn {
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.messages {
-  flex: 1;
-  padding: 10px;
-  overflow-y: auto;
-}
-
-.userMsg {
-  background: #d1ecff;
-  padding: 8px;
-  margin: 6px 0;
-  border-radius: 8px;
-  text-align: right;
-}
-
-.botMsg {
-  background: #eee;
-  padding: 8px;
-  margin: 6px 0;
-  border-radius: 8px;
-}
-
-.inputBox {
-  display: flex;
-  padding: 8px;
-  border-top: 1px solid #ddd;
-}
-
-.input {
-  flex: 1;
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.sendBtn {
-  margin-left: 8px;
-  background: #4a90e2;
-  border: none;
-  color: white;
-  padding: 8px 14px;
-  border-radius: 4px;
-  cursor: pointer;
-} */
-
-
-
-
 /* styles.module.css */
-
 .container {
   position: relative;
   z-index: 1000;
@@ -103,10 +7,10 @@
 /* Floating Button */
 .floatingBtn {
   position: fixed;
-  bottom: 32px;
-  right: 32px;
-  width: 64px;
-  height: 64px;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
@@ -153,10 +57,12 @@
 /* Chat Box */
 .chatBox {
   position: fixed;
-  bottom: 110px;
-  right: 32px;
-  width: 380px;
-  height: 580px;
+  bottom: 90px;
+  right: 20px;
+  width: calc(100vw - 40px);
+  max-width: 380px;
+  height: 500px;
+  max-height: calc(100vh - 110px);
   background: white;
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
@@ -168,20 +74,98 @@
   transform: translateY(20px);
   animation: slideUp 0.3s ease-out forwards;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
 }
 
-@media (max-width: 640px) {
+/* For 340px screens and below */
+@media (max-width: 340px) {
+  .chatBox {
+    right: 10px;
+    bottom: 80px;
+    width: calc(100vw - 20px);
+    height: 450px;
+    max-height: calc(100vh - 100px);
+  }
+  
+  .floatingBtn {
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .header {
+    padding: 12px 16px;
+  }
+  
+  .messages {
+    padding: 12px;
+  }
+  
+  .inputArea {
+    padding: 12px 16px;
+  }
+  
+  .messageContent {
+    max-width: 80%;
+  }
+  
+  .messageText {
+    font-size: 13px;
+  }
+}
+
+/* For 380px - 640px screens */
+@media (min-width: 341px) and (max-width: 640px) {
   .chatBox {
     width: calc(100vw - 32px);
-    height: 70vh;
     right: 16px;
-    bottom: 100px;
+    bottom: 90px;
+    height: 500px;
+    max-height: calc(100vh - 110px);
   }
   
   .floatingBtn {
     right: 16px;
+    bottom: 16px;
+  }
+}
+
+/* For 641px - 768px screens */
+@media (min-width: 641px) and (max-width: 768px) {
+  .chatBox {
+    width: 380px;
+    right: 20px;
+    bottom: 100px;
+    height: 520px;
+  }
+  
+  .floatingBtn {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+/* For 769px - 1024px screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .chatBox {
+    width: 380px;
+    right: 24px;
+    bottom: 110px;
+    height: 550px;
+  }
+  
+  .floatingBtn {
+    right: 24px;
     bottom: 24px;
+  }
+}
+
+/* For 1025px screens and above */
+@media (min-width: 1025px) {
+  .chatBox {
+    width: 380px;
+    height: 580px;
+    max-height: calc(100vh - 150px);
   }
 }
 
@@ -220,7 +204,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  backdrop-filter: blur(10px);
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .headerContent {
@@ -237,29 +224,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(10px);
 }
 
 .headerText {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .title {
   font-weight: 700;
   font-size: 16px;
   letter-spacing: -0.3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .subtitle {
   font-size: 12px;
   opacity: 0.8;
   margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .headerActions {
   display: flex;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .actionBtn, .closeBtn {
@@ -274,7 +268,6 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
-  backdrop-filter: blur(10px);
 }
 
 .actionBtn:hover, .closeBtn:hover {
@@ -285,10 +278,17 @@
 /* Messages */
 .messages {
   flex: 1;
+  min-height: 0;
   padding: 20px;
   overflow-y: auto;
   background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
   scroll-behavior: smooth;
+}
+
+@media (max-width: 340px) {
+  .messages {
+    padding: 12px;
+  }
 }
 
 .message {
@@ -323,6 +323,12 @@
   position: relative;
 }
 
+@media (max-width: 340px) {
+  .messageContent {
+    max-width: 80%;
+  }
+}
+
 .userMessage .messageContent {
   background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
   color: white;
@@ -344,6 +350,13 @@
   font-size: 14px;
   line-height: 1.5;
   word-wrap: break-word;
+  word-break: break-word;
+}
+
+@media (max-width: 340px) {
+  .messageText {
+    font-size: 13px;
+  }
 }
 
 .messageTime {
@@ -420,6 +433,14 @@
   display: flex;
   gap: 12px;
   align-items: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 340px) {
+  .inputArea {
+    padding: 12px 16px;
+    gap: 8px;
+  }
 }
 
 .inputWrapper {
@@ -437,6 +458,13 @@
   transition: all 0.2s;
   outline: none;
   color: #1e293b;
+}
+
+@media (max-width: 340px) {
+  .input {
+    padding: 10px 44px 10px 12px;
+    font-size: 13px;
+  }
 }
 
 .input:focus {
@@ -488,6 +516,13 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
+}
+
+@media (max-width: 340px) {
+  .sendBtn {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .sendBtn.active {

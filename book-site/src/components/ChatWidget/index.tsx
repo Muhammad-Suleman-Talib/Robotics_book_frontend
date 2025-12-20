@@ -108,39 +108,83 @@ export default function Chatbot() {
     scrollToBottom();
   }, [messages]);
 
-  const sendMessage = async () => {
-    if (!input.trim()) return;
+  // const sendMessage = async () => {
+  //   if (!input.trim()) return;
 
-    const userMsg = { role: "user", text: input };
-    setMessages(prev => [...prev, userMsg]);
-    setInput("");
-    setIsTyping(true);
+  //   const userMsg = { role: "user", text: input };
+  //   setMessages(prev => [...prev, userMsg]);
+  //   setInput("");
+  //   setIsTyping(true);
 
-    try {
-      const res = await fetch("http://localhost:8000/api/query", {
+  //   try {
+  //     const res = await fetch("https://fastapiagent-production.up.railway.app/query", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify({
+  //         query: userMsg.text,
+  //         session_id: sessionId,
+  //         // selected_text: ""
+  //       })
+  //     });
+
+  //     const data = await res.json();
+  //     setIsTyping(false);
+
+  //     const botMsg = { role: "bot", text: data.response };
+  //     setMessages(prev => [...prev, botMsg]);
+
+  //   } catch (error) {
+  //     setIsTyping(false);
+  //     setMessages(prev => [
+  //       ...prev,
+  //       { role: "bot", text: "⚠️ Server error. Please try again." }
+  //     ]);
+  //   }
+  // };
+const sendMessage = async () => {
+  if (!input.trim()) return;
+
+  const userMsg = { role: "user", text: input };
+  setMessages(prev => [...prev, userMsg]);
+  setInput("");
+  setIsTyping(true);
+
+  try {
+    const res = await fetch(
+      "https://thriving-heart-production-8071.up.railway.app/api/query",
+      {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          query: userMsg.text,
-          session_id: sessionId,
-          selected_text: ""
+          query: userMsg.text
         })
-      });
+      }
+    );
 
-      const data = await res.json();
-      setIsTyping(false);
-
-      const botMsg = { role: "bot", text: data.response };
-      setMessages(prev => [...prev, botMsg]);
-
-    } catch (error) {
-      setIsTyping(false);
-      setMessages(prev => [
-        ...prev,
-        { role: "bot", text: "⚠️ Server error. Please try again." }
-      ]);
+    if (!res.ok) {
+      throw new Error("Server error");
     }
-  };
+
+    const data = await res.json();
+
+    setIsTyping(false);
+
+    const botMsg = {
+      role: "bot",
+      text: data.answer || "No answer received"
+    };
+
+    setMessages(prev => [...prev, botMsg]);
+
+  } catch (error) {
+    console.error(error);
+    setIsTyping(false);
+    setMessages(prev => [
+      ...prev,
+      { role: "bot", text: "⚠️ Server error. Please try again." }
+    ]);
+  }
+};
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -287,3 +331,4 @@ export default function Chatbot() {
     </div>
   );
 }
+
